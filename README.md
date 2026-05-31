@@ -1,31 +1,32 @@
-# JARVIS-RaspberryPi
-A replica of the JARVIS AI for Raspberry Pi 4 (1GB RAM) using Piper and Groq.
+# JARVIS OS for Raspberry Pi 4 (1GB)
 
-## Installation & Commands
+A lightweight, Stark Industries-inspired AI terminal OS shell.
 
-### Phase 1: The Mouth (Voice)
-1. Update your system:
-   `sudo apt update && sudo apt upgrade -y` 
-2. Install dependencies:
-   `sudo apt install wget alsa-utils -y` 
-3. Create project folder:
-   `mkdir jarvis && cd jarvis` 
-4. Download Piper engine:
-   `wget https://github.com/rhasspy/piper/releases/download/v1.2.0/piper_arm64.tar.gz` 
-5. Extract files:
-   `tar -xf piper_arm64.tar.gz` 
-6. Download Ryan voice model:
-   `wget https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_GB/ryan/medium/en_GB-ryan-medium.onnx` 
-7. Download config:
-   `wget https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_GB/ryan/medium/en_GB-ryan-medium.onnx.json` 
-8. Test voice:
-   `echo "Systems online. Welcome back, Samuel." | ./piper/piper --model en_GB-ryan-medium.onnx --output_file welcome.wav && aplay welcome.wav` 
+## 🚀 Quick Start (3 Steps)
 
-### Phase 2: The Ears (STT)
-1. Install Python libraries:
-   `pip install groq SpeechRecognition pyaudio` 
-   *(If pyaudio fails, run `sudo apt install python3-pyaudio -y` first)* 
+### 1. Clone the Lab
+```bash
+git clone https://github.com/jitheshsamuel-tomatensalot/JARVIS-RaspberryPi.git
+cd JARVIS-RaspberryPi
+```
 
-## Usage
-Run the master script:
-`python jarvis_main.py` 
+### 2. Build the OS
+Run the master setup script. This will install all dependencies and configure the Pi to boot directly into the JARVIS shell.
+```bash
+chmod +x setup.sh
+sudo ./setup.sh
+```
+
+### 3. Connect the Brain
+Open `jarvis_core.py` and add your **Groq API Key**.
+
+## 📂 System Components
+- **jarvis_os.py**: The visual interface (Wallpaper, Flight Radar, App Launcher).
+- **jarvis_core.py**: The AI brain, speech recognition, and voice output.
+- **setup.sh**: The OS-level configuration script.
+
+## ⚙️ Features
+- Real-time Flight Radar
+- Voice-controlled AI Assistant (Llama 3)
+- Integrated Notepad & Media Player
+- Zero-Lag performance on 1GB RAM
