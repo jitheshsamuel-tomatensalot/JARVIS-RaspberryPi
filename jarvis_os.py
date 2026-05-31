@@ -13,18 +13,28 @@ class JarvisOS:
     def __init__(self, root):
         self.root = root
         self.root.title("JARVIS OS v1.2")
+        
+        # Enforce Fullscreen
         self.root.attributes('-fullscreen', True)
+        self.root.attributes('-topmost', True)
         self.root.configure(bg='black')
+        
+        # Bind Escape key to toggle fullscreen (useful for debugging)
+        self.root.bind("<Escape>", self.toggle_fullscreen)
+        
         self.lang_idx = 0
 
-        # Force focus and keep on top for 'OS' feel
-        self.root.focus_set()
+        # Force focus for 'OS' feel
+        self.root.focus_force()
         
         # Load Wallpaper
         if os.path.exists(WALLPAPER_PATH):
             try:
                 self.bg_image = Image.open(WALLPAPER_PATH)
-                self.bg_image = self.bg_image.resize((self.root.winfo_screenwidth(), self.root.winfo_screenheight()))
+                # Use screen resolution for scaling
+                screen_w = self.root.winfo_screenwidth()
+                screen_h = self.root.winfo_screenheight()
+                self.bg_image = self.bg_image.resize((screen_w, screen_h))
                 self.bg_photo = ImageTk.PhotoImage(self.bg_image)
                 self.bg_label = tk.Label(self.root, image=self.bg_photo)
                 self.bg_label.place(x=0, y=0, relwidth=1, relheight=1)
@@ -82,6 +92,10 @@ class JarvisOS:
                         fg='black', bg=self.color, width=20, pady=10)
         btn.pack(pady=10)
         return btn
+
+    def toggle_fullscreen(self, event=None):
+        is_full = self.root.attributes('-fullscreen')
+        self.root.attributes('-fullscreen', not is_full)
 
     def update_time(self):
         self.time_label.config(text=datetime.now().strftime("%H:%M:%S"))
