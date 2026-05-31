@@ -2,7 +2,7 @@
 
 A lightweight, Stark Industries-inspired AI terminal OS shell.
 
-![JARVIS UI v1.2 Arc Reactor](https://static.prod-images.emergentagent.com/jobs/dee58d7c-0e71-41eb-8504-da3cf215ea84/images/59f17f28bc02dc1fb66b2c305947bf566a8ef0aa3a0c300d3a2a8718cb1d52f0.png)
+![JARVIS UI v1.2 Final](https://static.prod-images.emergentagent.com/jobs/dee58d7c-0e71-41eb-8504-da3cf215ea84/images/2c4ed96bc4bbcffc7a7f7d4dfeb7da5d3831a6e35321c59c468f15f8be701b70.png)
 
 ## 🚀 Quick Start (3 Steps)
 
@@ -23,13 +23,13 @@ sudo ./setup.sh
 Open `jarvis_core.py` and add your **Groq API Key**.
 
 ## 📂 System Components
-- **jarvis_os.py**: The visual interface (v1.2: Fullscreen, Arc Reactor Heart, Live Status).
-- **jarvis_core.py**: The AI brain (Llama 3 70B), offline wake-word (Vosk), and multi-language support.
-- **setup.sh**: The OS-level configuration script.
+- **jarvis_os.py**: Full-screen visual interface with centered Arc Reactor heart.
+- **jarvis_core.py**: AI brain (Llama 3 70B), offline wake-word (Vosk), and multi-language support.
+- **setup.sh**: One-click OS-level configuration script.
 
 ## ⚙️ Features
-- **Arc Reactor Core**: Integrated glowing visual core in the center of the UI.
-- **Vosk Wake Word**: Fully offline "Jarvis" wake-word detection.
-- **Voice Flight Radar**: Say "Jarvis, check the airspace" for a 40km local flight report.
-- **Native Multi-language**: Toggle between English and Malayalam (Native Support).
-- **Live Diagnostics**: Real-time WiFi and Audio hardware monitoring.
+- **Arc Reactor Visual**: Central glowing core for the ultimate movie feel.
+- **Vosk Wake Word**: Fully offline "Jarvis" activation.
+- **Voice Airspace Report**: Real-time 40km flight status via voice command.
+- **Malayalam & Multi-lang**: Full support for English and Malayalam (Native).
+- **Hardware Monitor**: Live WiFi and Audio I/O diagnostics.
