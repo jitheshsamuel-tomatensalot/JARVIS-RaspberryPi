@@ -2,7 +2,7 @@
 
 A lightweight, Stark Industries-inspired AI terminal OS shell.
 
-![JARVIS UI v1.1 Mockup](https://static.prod-images.emergentagent.com/jobs/dee58d7c-0e71-41eb-8504-da3cf215ea84/images/245d16b58a0dd6ac12abf8c6d90f0f88a9e2a0487a4edde660432d3e18b40096.png)
+![JARVIS UI v1.2 Arc Reactor](https://static.prod-images.emergentagent.com/jobs/dee58d7c-0e71-41eb-8504-da3cf215ea84/images/02f715e1a7a50a7518d03dc0939ff13ed4dcb2cc21d212b4e4a4828786e7a32e.png)
 
 ## 🚀 Quick Start (3 Steps)
 
@@ -23,13 +23,13 @@ sudo ./setup.sh
 Open `jarvis_core.py` and add your **Groq API Key**.
 
 ## 📂 System Components
-- **jarvis_os.py**: The visual interface (V1.1: Clock, WiFi Status, Audio Monitor).
-- **jarvis_core.py**: The AI brain (Llama 3), speech recognition (Vosk/Google), and voice output (Piper/gTTS).
+- **jarvis_os.py**: The visual interface (v1.2: Fullscreen, Arc Reactor, WiFi/Audio Monitor).
+- **jarvis_core.py**: The AI brain (Llama 3 70B), speech recognition (Vosk), and multi-language output.
 - **setup.sh**: The OS-level configuration script.
 
 ## ⚙️ Features
-- **Voice Flight Radar**: Ask "Jarvis, any planes nearby?" and he'll report flights in a 40km radius.
-- **Voice-controlled AI Assistant**: Powered by Llama 3 70B.
-- **Multi-language support**: English, Malayalam (Native Support), French, German, Russian.
-- **Live Diagnostics**: Real-time WiFi quality and Audio I/O device monitoring.
-- **Zero-Lag performance**: Highly optimized for 1GB RAM hardware.
+- **Arc Reactor Display**: Visual heart of the system (place `arc_reactor.png` in folder).
+- **Voice Flight Radar**: Say "Jarvis, check local airspace" for a verbal 40km flight report.
+- **Voice-controlled AI Assistant**: Powered by Llama 3 70B (Fast & Intelligent).
+- **Native Multi-language**: English, Malayalam, French, German, Russian.
+- **Live Diagnostics**: Real-time WiFi and Audio hardware status.
