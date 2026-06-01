@@ -19,7 +19,7 @@ class JarvisOS:
         self.root.attributes('-topmost', True)
         self.root.configure(bg='black')
         
-        # Bind Escape key to toggle fullscreen (useful for debugging)
+        # Bind Escape key to toggle fullscreen
         self.root.bind("<Escape>", self.toggle_fullscreen)
         
         self.lang_idx = 0
@@ -31,7 +31,6 @@ class JarvisOS:
         if os.path.exists(WALLPAPER_PATH):
             try:
                 self.bg_image = Image.open(WALLPAPER_PATH)
-                # Use screen resolution for scaling
                 screen_w = self.root.winfo_screenwidth()
                 screen_h = self.root.winfo_screenheight()
                 self.bg_image = self.bg_image.resize((screen_w, screen_h))
@@ -73,6 +72,7 @@ class JarvisOS:
         self.create_button(left_frame, "LAUNCH JARVIS AI", self.launch_ai)
         self.lang_btn = self.create_button(left_frame, f"LANGUAGE: {LANGS[self.lang_idx]}", self.toggle_lang)
         self.create_button(left_frame, "GAMES", self.launch_games)
+        self.create_button(left_frame, "NOTEPAD", self.launch_notepad)
         self.create_button(left_frame, "EXIT", self.root.destroy)
 
         # --- Status Bar (Bottom) ---
@@ -103,8 +103,8 @@ class JarvisOS:
 
     def update_status(self):
         try:
-            cmd = "iwconfig wlan0 | grep -i quality"
-            res = subprocess.check_output(cmd, shell=True).decode("utf-8")
+            # Try getting wifi quality
+            res = subprocess.check_output("iwconfig wlan0 | grep -i quality", shell=True).decode("utf-8")
             self.wifi_label.config(text=f"WIFI: {res.strip()}")
         except: self.wifi_label.config(text="WIFI: OFFLINE")
 
@@ -123,6 +123,7 @@ class JarvisOS:
 
     def launch_ai(self): os.system("lxterminal -e 'python3 jarvis_core.py' &")
     def launch_games(self): os.system("lxterminal -e 'bastet' &")
+    def launch_notepad(self): os.system("mousepad &")
 
 if __name__ == "__main__":
     root = tk.Tk()
