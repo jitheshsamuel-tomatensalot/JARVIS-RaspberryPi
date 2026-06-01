@@ -7,14 +7,17 @@ echo "=========================================="
 echo "[1/7] Updating system..."
 sudo apt update && sudo apt upgrade -y
 
-# 2. Install Visual & Audio Essentials
+# 2. Install Visual & Audio Essentials (Fixed for Debian 12+)
 echo "[2/7] Installing OS components..."
-sudo apt install -y xserver-xorg xinit openbox leafpad bastet vlc midori-browser \
+# leafpad is replaced by mousepad; midori is often unavailable, using chromium-browser as light alternative or just xterm
+sudo apt install -y xserver-xorg xinit openbox mousepad bastet vlc chromium-browser \
 python3-tk python3-pil python3-pil.imagetk alsa-utils wget git python3-pip unzip mpg123 libportaudio2 python3-pyaudio
 
-# 3. Setup Python Dependencies
+# 3. Setup Python Dependencies (Fixed for 'externally-managed-environment')
 echo "[3/7] Installing Python AI libraries..."
-pip3 install groq speechrecognition vosk sounddevice gTTS
+# Using --break-system-packages for convenience on a dedicated Pi project, or a venv is better.
+# For a 12-year-old on a dedicated OS, --break-system-packages is the simplest fix.
+pip3 install groq speechrecognition vosk sounddevice gTTS --break-system-packages
 
 # 4. Download AI Models (The 'Core' Models)
 echo "[4/7] Downloading Voice and Wake-word models..."
